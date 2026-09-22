@@ -1,19 +1,16 @@
 from dotenv import load_dotenv
 import os
+import hashlib
 from pathlib import Path
 from src.helpers import load_pdf_file, filter_to_minimal_docs, text_split, download_hugging_face_embeddings
 from langchain_pinecone import PineconeVectorStore
 from pinecone import Pinecone
 from pinecone import ServerlessSpec
 
+load_dotenv(Path(__file__).resolve().parents[2] / "secret" / ".env")
 
-load_dotenv()
-
-PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-
-os.environ["PINECONE_API_KEY"] = PINECONE_API_KEY
-os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
+PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY")
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
@@ -26,6 +23,11 @@ embeddings = download_hugging_face_embeddings()
 pinecone_api_key = PINECONE_API_KEY
 pc = Pinecone(api_key=pinecone_api_key)
 
+ids = []
+for chunk in text_chunks:
+    # Create a unique ID for each chunk using a hash of the content
+    chunk_id = hashlib.md5(chunk.page_content.encode()).hexdigest()
+    ids.append(chunk_id)
 
 index_name = "medical-chatbot"
 
@@ -43,9 +45,7 @@ index = pc.Index(index_name)
 docsearch = PineconeVectorStore.from_documents(
     documents=text_chunks,
     embedding=embeddings,
-    index_name=index_name,)
+    index_name=index_name,
+    ids=ids)
 
-
-docsearch = PineconeVectorStore.from_existing_index(
-    embedding=embeddings,
-    index_name=index_name,)
+print(index.describe_index_stats())
