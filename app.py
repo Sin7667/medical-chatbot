@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, session
 from src.helpers import download_hugging_face_embeddings
 from langchain_pinecone import PineconeVectorStore
 from langchain_openai import ChatOpenAI
-from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
@@ -77,8 +76,6 @@ docsearch = PineconeVectorStore.from_existing_index(
     embedding=embeddings
 )
 
-retriever = docsearch.as_retriever(search_type="similarity", search_kwargs={"k": 3})
-
 chatModel = ChatOpenAI(model="gpt-4o")
 
 prompt = ChatPromptTemplate.from_messages(
@@ -89,7 +86,11 @@ prompt = ChatPromptTemplate.from_messages(
 )
 
 question_answer_chain = create_stuff_documents_chain(chatModel, prompt)
-rag_chain = create_retrieval_chain(retriever, question_answer_chain)
+
+def retrieve(query, k=3,threshold=0.35):
+        hits = docsearch.similarity_search_with_score(query, k=k)
+        return [doc for doc, score in hits if score >= threshold]
+
 
 @app.route("/")
 def index():
@@ -102,13 +103,24 @@ def chat():
     user_id = get_user_id()
     msg = request.form["msg"]
 
-    response = rag_chain.invoke({"input": msg})
-    answer = response["answer"]
+    documents = retrieve(msg)
 
+    reference = set()
+    for doc in documents:
+        name = Path(doc.metadata.get("source", "")).name
+        page = doc.metadata.get("page", 0) + 1
+        reference.add(f"{name} (Page: {page})")
+
+    answer = question_answer_chain.invoke({"input": msg, "context": documents})
+    if reference:
+        answer = answer + "\n\nReferences:\n" + "\n".join(reference)
+    
     save_message(user_id, "user", msg)
     save_message(user_id, "assistant", answer)
 
     return answer
+
+    
 
 if __name__ == "__main__":
     init_db()

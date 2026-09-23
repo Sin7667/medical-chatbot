@@ -1,0 +1,358 @@
+[
+  {
+    "id": 1,
+    "category": "fact",
+    "question": "What are the symptoms of anemia?",
+    "ground_truth": "Weakness, fatigue, and a run-down feeling may be signs of mild anemia. Skin that is pasty or sallow, or lack of color in the creases of the palm, gums, nail beds, or lining of the eyelids are other signs of anemia. Someone who is weak, tires easily, is often out of breath, and feels faint or dizzy may be severely anemic.",
+    "expected_page": [
+      196
+    ]
+  },
+  {
+    "id": 2,
+    "category": "fact",
+    "question": "What can cause asthma to start in adults?",
+    "ground_truth": "Allergenic materials may also play a role when adults become asthmatic. Asthma can actually start at any age and in a wide variety of situations. Many adults who are not allergic do have such conditions as sinusitis or nasal polyps, or they may be sensitive to aspirin and related drugs. Another major source of adult asthma is exposure at work to animal products, certain forms of plastic, wood dust, or metals.",
+    "expected_page": [
+      394
+    ]
+  },
+  {
+    "id": 3,
+    "category": "terminology",
+    "question": "What is the maximum daily dose of APAP for adults?",
+    "ground_truth": "The usual dosage for adults and children age 12 and over is 325-650 mg every 4- 6 hours as needed. No more than 4 grams (4000 mg) should be taken in 24 hours.",
+    "expected_page": [
+      33
+    ]
+  },
+  {
+    "id": 4,
+    "category": "terminology",
+    "question": "Besides high blood pressure, what is captopril (Capoten) used for?",
+    "ground_truth": "For example, captopril (Capoten) is used to treat kidney problems in people who take insulin to control diabetes. Captopril and lisinopril are also given to some patients after a heart attack. Heart attacks damage and weaken the heart muscle, and the damage continues even after a person recovers from the attack. This medicine helps slow down further damage to the heart. ACE inhibitors also may be used to treat congestive heart failure.",
+    "expected_page": [
+      217
+    ]
+  },
+  {
+    "id": 5,
+    "category": "multi_passage",
+    "question": "Compare anorexia nervosa and bulimia nervosa.",
+    "ground_truth": "Anorexia nervosa is an eating disorder characterized by unrealistic fear of weight gain, self-starvation, and conspicuous distortion of body image. People with bulimia, known as bulimics, consume large amounts of food (binge) and then try to rid themselves of the food and calories (purge) by fasting, excessive exercise, vomiting, or using laxatives. The bingeing and purging activity associated with this disorder can cause severe damage, even death, although the risk of death is not as high as for anorexia nervosa, an eating disorder that leads to excessive weight loss.",
+    "expected_page": [
+      225,
+      626
+    ]
+  },
+  {
+    "id": 6,
+    "category": "multi_passage",
+    "question": "Compare folic acid deficiency anemia and vitamin B12 deficiency anemia.",
+    "ground_truth": "Folic acid deficiency anemia is the most common type of megaloblastic anemia (in which red blood cells are bigger than normal). It is caused by a deficiency of folic acid, a vitamin that the body needs to produce normal cells. Folic acid anemia is especially common in infants and teenagers. Less common in this country than folic acid anemia, vitamin B 12 deficiency anemia is another type of megaloblastic anemia that develops when the body doesn’t absorb enough of this nutrient. Necessary for the creation of red blood cells, B 12 is found in meat and vegetables. Large amounts of B 12 are stored in the body, so this condition may not become apparent until as much as four years after B 12 absorption stops or slows down. The most common form of B 12 deficiency is pernicious anemia. Since most people who eat meat or eggs get enough B12 in their diets, a deficiency of this vitamin usually means that the body is not absorbing it properly.",
+    "expected_page": [
+      194,
+      195
+    ]
+  },
+  {
+    "id": 7,
+    "category": "negative",
+    "question": "hi",
+    "ground_truth": "I don't know.",
+    "expected_page": []
+  },
+  {
+    "id": 8,
+    "category": "negative",
+    "question": "What is a good recipe for pizza dough?",
+    "ground_truth": "I don't know.",
+    "expected_page": []
+  },
+  {
+    "id": 9,
+    "category": "rephrase_lay",
+    "question": "My stomach hurts around my belly button and now the pain moved to the lower right side. What could it be?",
+    "ground_truth": "The distinguishing symptom of appendicitis is pain beginning around or above the navel. The pain, which may be severe or only achy and uncomfortable, eventually moves into the right lower corner of the abdomen. There, it becomes more steady and more severe, and often increases with movement, coughing, and so forth. Loss of appetite is very common. Nausea and vomiting may occur in about half of the cases and occasionally there may be constipation or diarrhea.",
+    "expected_page": [
+      356
+    ]
+  },
+  {
+    "id": 10,
+    "category": "rephrase_technical",
+    "question": "What is the characteristic pain migration pattern in acute appendicitis?",
+    "ground_truth": "The distinguishing symptom of appendicitis is pain beginning around or above the navel. The pain, which may be severe or only achy and uncomfortable, eventually moves into the right lower corner of the abdomen. There, it becomes more steady and more severe, and often increases with movement, coughing, and so forth. Loss of appetite is very common. Nausea and vomiting may occur in about half of the cases and occasionally there may be constipation or diarrhea.",
+    "expected_page": [
+      356
+    ]
+  },
+  {
+    "id": 11,
+    "category": "fact",
+    "question": "What is the most common symptom of achalasia?",
+    "ground_truth": "Dysphagia, or difficulty swallowing, is the most common symptom of achalasia. The person with achalasia usually has trouble swallowing both liquid and solid foods, often feeling that food “gets stuck” on the way down. The person has chest pain that is often mistaken for angina pectoris (cardiac pain). Heartburn and difficulty belching are common.",
+    "expected_page": [
+      34
+    ]
+  },
+  {
+    "id": 12,
+    "category": "fact",
+    "question": "How often does the facial paralysis in Bell's palsy go away?",
+    "ground_truth": "In the large majority of cases (80-85%), the facial weakness or paralysis is temporary. However, individuals who experience complete paralysis seem to have a poorer recovery rate with only 60% returning to normal.",
+    "expected_page": [
+      475
+    ]
+  },
+  {
+    "id": 13,
+    "category": "fact",
+    "question": "What causes anthrax and which parts of the human body can it affect?",
+    "ground_truth": "Anthrax is a bacterial infection caused by Bacillus anthracis that primarily affects livestock but that can occasionally spread to humans, affecting either the skin, intestines, or lungs.",
+    "expected_page": [
+      237
+    ]
+  },
+  {
+    "id": 14,
+    "category": "fact",
+    "question": "What are the three types of botulism?",
+    "ground_truth": "Three types of botulism have been identified: food-borne, wound, and infant botulism. The main difference between types hinges on the route of exposure to the toxin. In the United States, there are approximately 110 cases of botulism reported annually. Food-borne botulism accounts for 25% of all botulism cases and can be traced to eating contaminated home-preserved food. Infant botulism accounts for 72% of all cases, but the recovery rate is good (about 98%) with proper treatment.",
+    "expected_page": [
+      573
+    ]
+  },
+  {
+    "id": 15,
+    "category": "fact",
+    "question": "What causes beriberi?",
+    "ground_truth": "Beriberi is a disease caused by a deficiency of thiamine (vitamin B 1) that affects many systems of the body, including the muscles, heart, nerves, and digestive system. Beriberi literally means “I can’t, I can’t” in Singhalese, which reflects the crippling effect it has on its victims. It is common in parts of southeast Asia, where white rice is the main food. In the United States, beriberi is primarily seen in people with chronic alcoholism.",
+    "expected_page": [
+      483
+    ]
+  },
+  {
+    "id": 16,
+    "category": "fact",
+    "question": "Which hormones are reduced in Addison's disease?",
+    "ground_truth": "Addison’s disease is a disorder involving disrupted functioning of the part of the adrenal gland called the cortex. This results in decreased production of two important chemicals (hormones) normally released by the adrenal cortex: cortisol and aldosterone.",
+    "expected_page": [
+      67
+    ]
+  },
+  {
+    "id": 17,
+    "category": "fact",
+    "question": "What is the most common cause of functional amblyopia?",
+    "ground_truth": "Amblyopia is the most common cause of impaired vision in children, affecting nearly three out of every 100 people or 2-4% of the population. A misalignment of the eyes (strabismus) is the most common cause of functional amblyopia.",
+    "expected_page": [
+      155
+    ]
+  },
+  {
+    "id": 18,
+    "category": "terminology",
+    "question": "What do AMS, HAPE and HACE stand for?",
+    "ground_truth": "There are three major clinical syndromes that fall under the heading of altitude sickness: acute mountain sickness (AMS), high-altitude pulmonary edema (HAPE), and high-altitude cerebral edema (HACE). AMS is the mildest, and the other two represent severe, life-threatening forms of altitude sickness.",
+    "expected_page": [
+      146
+    ]
+  },
+  {
+    "id": 19,
+    "category": "terminology",
+    "question": "Why should aspirin not be given to children with flu-like symptoms or chickenpox?",
+    "ground_truth": "Aspirin—even children’s aspirin—should never be given to children or teenagers with flu-like symptoms or chickenpox. Aspirin can cause Reye’s syndrome, a life-threatening condition that affects the nervous system and liver. As many as 30% of children and teenagers who develop Reye’s syndrome die. Those who survive may have permanent brain damage.",
+    "expected_page": [
+      392
+    ]
+  },
+  {
+    "id": 20,
+    "category": "terminology",
+    "question": "What kind of drug is Xanax?",
+    "ground_truth": "The family of antianxiety drugs known as benzodiazepines includes alprazolam (Xanax), chlordiazepoxide (Librium), diazepam (Valium), and lorazepam (Ativan). These medicines take effect fairly quickly, starting to work within an hour after they are taken.",
+    "expected_page": [
+      480
+    ]
+  },
+  {
+    "id": 21,
+    "category": "terminology",
+    "question": "Which beta blockers are used as eye drops for glaucoma?",
+    "ground_truth": "Eye drops that contain beta blockers include betaxolol (Betoptic), cartelol (Ocupress), and timolol (Timoptic).",
+    "expected_page": [
+      489
+    ]
+  },
+  {
+    "id": 22,
+    "category": "terminology",
+    "question": "What can an AST:ALT ratio of 2:1 or higher indicate?",
+    "ground_truth": "ALT levels, when compared to the levels of a similar enzyme, aspartate aminotransferase (AST), may provide important clues to the nature of the liver disease. For example, within a certain range of values, a ratio of 2:1 or greater for AST: ALT might indicate that a patient suffers from alcoholic liver disease.",
+    "expected_page": [
+      102
+    ]
+  },
+  {
+    "id": 23,
+    "category": "terminology",
+    "question": "What does the Apgar score measure and when is it done?",
+    "ground_truth": "Apgar testing is the assessment of the newborn rating color, heart rate, stimulus response, muscle tone, and respirations on a scale of zero to two, for a maximum possible score of 10. It is performed twice, first at one minute and then again at five minutes after birth.",
+    "expected_page": [
+      345
+    ]
+  },
+  {
+    "id": 24,
+    "category": "terminology",
+    "question": "Which drugs belong to the aminoglycosides?",
+    "ground_truth": "Aminoglycosides are a group of antibiotics that are used to treat certain bacterial infections. This group of antibiotics includes at least eight drugs: amikacin, gentamicin, kanamycin, neomycin, netilmicin, paromomycin, streptomycin, and tobramycin.",
+    "expected_page": [
+      163,
+      164
+    ]
+  },
+  {
+    "id": 25,
+    "category": "multi_passage",
+    "question": "What is the difference between aortic valve insufficiency and aortic valve stenosis?",
+    "ground_truth": "In aortic valve insufficiency, the aortic valve becomes leaky, causing blood to flow backwards into the left ventricle. Aortic valve insufficiency is also know as aortic valve regurgitation because of the abnormal reversed flow of blood leaking through the poorly functioning valve. When aortic valve stenosis occurs, the aortic valve, located between the aorta and left ventricle of the heart, is narrower than normal size. When the valve narrows, as it does with stenosis, blood flow is impeded. Because it is more difficult for blood to flow through the valve, there is increased strain on the heart. Aortic valve stenosis can occur because of a birth defect in the formation of the valve. Calcium deposits may form on the valve with aging, causing the valve to become stiff and narrow. Stenosis can also occur as a result of rheumatic fever. Mild aortic stenosis may produce no symptoms at all. The most common symptoms, depending on the severity of the disease, are chest pain, blackouts, and difficulty breathing.",
+    "expected_page": [
+      342,
+      343
+    ]
+  },
+  {
+    "id": 26,
+    "category": "multi_passage",
+    "question": "Compare general and local anesthesia.",
+    "ground_truth": "General anesthesia is the induction of a state of unconsciousness with the absence of pain sensation over the entire body, through the administration of anesthetic drugs. Local or regional anesthesia involves the injection or application of an anesthetic drug to a specific area of the body, as opposed to the entire body and brain as occurs during general anesthesia. Surgeries involving the chest and abdomen are usually performed under general anesthesia.",
+    "expected_page": [
+      199,
+      203,
+      204
+    ]
+  },
+  {
+    "id": 27,
+    "category": "multi_passage",
+    "question": "How do ACE inhibitors and beta blockers lower blood pressure differently?",
+    "ground_truth": "ACE inhibitors are used in the treatment of high blood pressure. They work by preventing a chemical in the blood, angiotensin I, from being converted into a substance that increases salt and water retention in the body. Increased salt and water retention lead to high blood pressure. ACE inhibitors also make blood vessels relax, which helps lower blood pressure and allows more oxygen-rich blood to reach the heart. Beta blockers are medicines that affect the body’s response to certain nerve impulses. This, in turn, decreases the force and rate of the heart’s contractions, which lowers blood pressure and reduces the heart’s demand for oxygen.",
+    "expected_page": [
+      216,
+      488
+    ]
+  },
+  {
+    "id": 28,
+    "category": "multi_passage",
+    "question": "What is the difference between asthma and bronchitis?",
+    "ground_truth": "Today asthma is viewed as a chronic (long-lasting) inflammatory disease of the airways. In those susceptible to asthma, this inflammation causes the airways to narrow periodically. This, in turn, produces wheezing and breathlessness, sometimes to the point where the patient gasps for air. Obstruction to air flow either stops spontaneously or responds to a wide range of treatments, but continuing inflammation makes the airways hyper-responsive to stimuli such as cold air, exercise, dust mites, pollutants in the air, and even stress and anxiety. Bronchitis is an inflammation of the air passages between the nose and the lungs, including the windpipe or trachea and the larger air tubes of the lung that bring air in from the trachea (bronchi). Bronchitis can either be of brief duration (acute) or have a long course (chronic). Acute bronchitis is usually caused by a viral infection, but can also be caused by a bacterial infection and can heal without complications. Chronic bronchitis is a sign of serious lung disease that may be slowed but cannot be cured.",
+    "expected_page": [
+      393,
+      394,
+      611,
+      612
+    ]
+  },
+  {
+    "id": 29,
+    "category": "negative",
+    "question": "thanks!",
+    "ground_truth": "I don't know.",
+    "expected_page": []
+  },
+  {
+    "id": 30,
+    "category": "negative",
+    "question": "What will the weather be like in Berlin tomorrow?",
+    "ground_truth": "I don't know.",
+    "expected_page": []
+  },
+  {
+    "id": 31,
+    "category": "negative",
+    "question": "Who wrote Harry Potter?",
+    "ground_truth": "I don't know.",
+    "expected_page": []
+  },
+  {
+    "id": 32,
+    "category": "negative",
+    "question": "How do I install Python on Windows?",
+    "ground_truth": "I don't know.",
+    "expected_page": []
+  },
+  {
+    "id": 33,
+    "category": "negative",
+    "question": "What is 17 times 23?",
+    "ground_truth": "I don't know.",
+    "expected_page": []
+  },
+  {
+    "id": 34,
+    "category": "negative",
+    "question": "Tell me a joke.",
+    "ground_truth": "I don't know.",
+    "expected_page": []
+  },
+  {
+    "id": 35,
+    "category": "rephrase_lay",
+    "question": "At what age is it no longer normal for a kid to wet the bed?",
+    "ground_truth": "Many researchers consider bed-wetting normal until age 6. The American Psychiatric Association, however, defines enuresis as repeated voiding of urine into the bed or clothes at age five or older. The wetting is usually involuntary but in some cases it is intentional. For a diagnosis of enuresis, wetting must occur twice a week for at least three months with no underlying physiological cause.",
+    "expected_page": [
+      467,
+      468
+    ]
+  },
+  {
+    "id": 36,
+    "category": "rephrase_technical",
+    "question": "What are the diagnostic criteria for enuresis by age and frequency?",
+    "ground_truth": "Many researchers consider bed-wetting normal until age 6. The American Psychiatric Association, however, defines enuresis as repeated voiding of urine into the bed or clothes at age five or older. The wetting is usually involuntary but in some cases it is intentional. For a diagnosis of enuresis, wetting must occur twice a week for at least three months with no underlying physiological cause.",
+    "expected_page": [
+      467,
+      468
+    ]
+  },
+  {
+    "id": 37,
+    "category": "rephrase_lay",
+    "question": "Why does my breath smell bad?",
+    "ground_truth": "Oral diseases, fermentation of food particles in the mouth, sinus infections, and unclean dentures can all contribute to mouth odor. Many non-oral diseases, such as lung infections, kidney failure, or severe liver disease, can also cause bad breath, though rarely. Many people think that bad breath can originate in the stomach or intestines; this is extremely rare. Cigarette smoke can cause bad breath, not only in the cigarette smoker, but also in one who is constantly exposed to second-hand smoke.",
+    "expected_page": [
+      451
+    ]
+  },
+  {
+    "id": 38,
+    "category": "rephrase_technical",
+    "question": "What is the etiology of halitosis?",
+    "ground_truth": "Oral diseases, fermentation of food particles in the mouth, sinus infections, and unclean dentures can all contribute to mouth odor. Many non-oral diseases, such as lung infections, kidney failure, or severe liver disease, can also cause bad breath, though rarely. Many people think that bad breath can originate in the stomach or intestines; this is extremely rare. Cigarette smoke can cause bad breath, not only in the cigarette smoker, but also in one who is constantly exposed to second-hand smoke.",
+    "expected_page": [
+      451
+    ]
+  },
+  {
+    "id": 39,
+    "category": "rephrase_lay",
+    "question": "Why does the skin between my toes itch and peel after using gym showers?",
+    "ground_truth": "Athlete’s foot is caused by a fungal infection that most often affects the fourth and fifth toe webs. Trichophyton rubrum, T. mentagrophytes, and Epidermophyton floccosum, the fungi that cause athlete’s foot, are unusual in that they live exclusively on dead body tissue (hair, the outer layer of skin, and nails). The fungus grows best in moist, damp, dark places with poor ventilation. Because the fungi grow well in warm, damp areas, they flourish in and around swimming pools, showers, and locker rooms.",
+    "expected_page": [
+      412
+    ]
+  },
+  {
+    "id": 40,
+    "category": "rephrase_technical",
+    "question": "What causes tinea pedis?",
+    "ground_truth": "Athlete’s foot is caused by a fungal infection that most often affects the fourth and fifth toe webs. Trichophyton rubrum, T. mentagrophytes, and Epidermophyton floccosum, the fungi that cause athlete’s foot, are unusual in that they live exclusively on dead body tissue (hair, the outer layer of skin, and nails). The fungus grows best in moist, damp, dark places with poor ventilation. Because the fungi grow well in warm, damp areas, they flourish in and around swimming pools, showers, and locker rooms.",
+    "expected_page": [
+      412
+    ]
+  }
+]
