@@ -4,6 +4,7 @@ from langchain_pinecone import PineconeVectorStore
 from langchain_openai import ChatOpenAI
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
+from src.websearch import search_pubmed
 from dotenv import load_dotenv
 from src.prompt import *
 import os
@@ -84,13 +85,32 @@ prompt = ChatPromptTemplate.from_messages(
         ("human", "{input}"),
     ]
 )
+router_prompt = ChatPromptTemplate.from_messages([
+    ("system", router_system_prompt),
+    ("human", "{input}"),
+])
+
+router = router_prompt | chatModel
+
+def route(msg):
+    return router.invoke({"input": msg}).content.strip().lower()
 
 question_answer_chain = create_stuff_documents_chain(chatModel, prompt)
 
 def retrieve(query, k=3,threshold=0.35):
         hits = docsearch.similarity_search_with_score(query, k=k)
-        return [doc for doc, score in hits if score >= threshold]
+        docs =[doc for doc, score in hits if score >= threshold]
+        for doc in docs:
+            doc.metadata["source_type"] = "pdf"
+        return docs
 
+def get_context(msg):
+    ziel = route(msg)
+    if ziel == "pubmed":
+        return search_pubmed(msg)
+    if ziel == "pdf":
+        return retrieve(msg)
+    return []
 
 @app.route("/")
 def index():
@@ -103,14 +123,16 @@ def chat():
     user_id = get_user_id()
     msg = request.form["msg"]
 
-    documents = retrieve(msg)
+    documents = get_context(msg)
 
     reference = set()
     for doc in documents:
-        name = Path(doc.metadata.get("source", "")).name
-        page = doc.metadata.get("page", 0) + 1
-        reference.add(f"{name} (Page: {page})")
-
+        if doc.metadata.get("source_type") == "pubmed":
+            reference.add(f"{doc.metadata['title']} — {doc.metadata['url']}")
+        else:
+            name = Path(doc.metadata.get("source", "")).name
+            page = int(doc.metadata.get("page", 0)) + 1
+            reference.add(f"{name} (Page: {page})")     
     answer = question_answer_chain.invoke({"input": msg, "context": documents})
     if reference:
         answer = answer + "\n\nReferences:\n" + "\n".join(reference)
@@ -120,7 +142,6 @@ def chat():
 
     return answer
 
-    
 
 if __name__ == "__main__":
     init_db()

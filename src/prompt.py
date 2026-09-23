@@ -7,3 +7,8 @@ system_prompt = (
     "\n\n"
     "{context}"
 )
+router_system_prompt =( "You route a user question to the right source. Answer with ONE word:\n"
+     "'pdf' - general medical knowledge: diseases, symptoms, treatments, anatomy.\n"
+     "'pubmed' - recent research, studies, trials, 'latest', 'new evidence'.\n"
+     "'none' - smalltalk, greetings, or anything not medical.\n"
+     "Answer with the single word only."  )
